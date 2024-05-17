@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main_container{
+            border: 1px solid  rgb(201, 188, 188);
+            width: 60%; 
+            margin: auto;
+            padding: 20px;
+        }
+        #heading{
+            border: 1px solid  rgb(201, 188, 188);
+            
+            text-align: center;
+            color: aliceblue;
+            background-color: black;
+        }
+        #form{
+            
+            border-radius: 5px;
+            margin: 20PX;
+            padding: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        input{
+            margin-left: 5PX;
+            width: 98%;
+            height: 30PX;
+            border-radius: 5px;
+            border-color: rgb(201, 188, 188);
+        }
+        #button{
+            text-align: center;
+
+        }
+        #btn{
+            width: 90px;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: aliceblue;
+        }
+        #city{
+            width: 99%;
+            height: 30px;
+            border-radius: 5px;
+            margin-left: 5px;
+            border-color: rgb(201, 188, 188);
+        }
+        label{
+            font-weight: bolder;
+            size: 20px;
+        }
+        #address{
+            width: 99%;
+            height: 70px;
+            border-radius: 5px;
+            margin-left: 5px;
+            border-color: rgb(201, 188, 188);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="main_container">
+    <div id="heading">
+        <h1>Registration Form</h1>
+    </div>
+    <form id="form">
+       <label>Name</label>  <br><input type="text" placeholder="Enter your name" id="name"><br><br>
+       <label>Mobile</label><br> <input type="text" placeholder="Enter your city" id="mobile"><br><br>
+       <label>Email</label>  <br><input type="email" placeholder="Enter your email" id="email"><br><br>
+       <label>City</label> <br><select  id="city">
+            <option >select</option>
+            <option >Jaipur</option>
+            <option >Ajemr</option>
+            <option >Bikaner</option>
+        </select><br><br>
+        <label>Address</label>  <br><textarea  id="address">
+            
+        </textarea> <br><br>
+        <div id="button">
+            <button id="btn">Submit</button>
+        </div>
+        
+
+    </form>
+</div>
+</body>
+<script>
+    let arr = [];
+    let form = document.getElementById("form")
+    
+    let btn = document.getElementById("btn")
+    btn.addEventListener("click",getvalue)
+    function getvalue(event){
+                   event.preventDefault()
+        let obj ={
+            Name:document.getElementById("name").value,
+            Mobile:document.getElementById("mobile").value,
+            Email:document.getElementById("email").value,
+            City:document.getElementById("city").value,
+            Address:document.getElementById("address").value,
+            Submit:document.getElementById("btn").value,
+
+        }
+        arr.push(obj)
+        console.log(arr)
+        form.reset()
+    }
+</script>
+</html>
